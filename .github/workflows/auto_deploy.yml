@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Bootcamp2020
+name: Deploy Website
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -23,11 +23,9 @@ jobs:
     # Runs a single command using the runners shell
     - name: Install NodeJS
       uses: actions/setup-node@v2-beta
-      with:
+      with: 
         node-version: 12
-    # Runs a set of commands using the runners shell
     - name: Install Surge
       run: npm install -g surge
     - name: Run Surge
-      run: surge ./ bootcamp2020example.surge.sh --token $ {{secrets.surgetoken}}
-      
+      run: surge ./ bootcampnewapp.surge.sh --token ${{secrets.SURGE_TOKEN}}
